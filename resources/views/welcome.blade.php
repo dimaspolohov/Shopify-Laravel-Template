@@ -86,21 +86,8 @@
             </div>
 
             <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                @if(!empty($formErrors) || !empty($success))
-                    <div id="alert" class="alert-box">
-                        @if (!empty($success))
-                            @include('notice.success')
-
-                        @endif
-                        @if (!empty($formErrors))
-                            @foreach($formErrors as $error)
-                                    @include('notice.error')
-                            @endforeach
-                        @endif
-                    </div>
-                @endif
                 <form method="POST" action="{{route('shopify.store')}}" class="grid grid-cols-1">
-                    <label>Это пример как получить токен сессии для отправки формы с авторизацией</label>
+                    <label>This is an example of how to get a session token for submitting a form with authorization</label>
                     <input type="text" name="token" value="{{$store->getSessionContext()->getSessionToken()->toNative()}}">
 
                     <div class="p-6 pt-0 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
